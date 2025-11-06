@@ -1,14 +1,23 @@
 import React from 'react';
 import styles from '../styles/ProductCard.module.css';
+import createElements from '../App';
+import index from '../index';
 
-const ProductCard = ({product}) => {
+const products = [
+    { id: 1, name: 'Laptop', price: '$999', inStock: true },
+    { id: 2, name: 'Phone', price: '$699', inStock: false },
+    { id: 3, name: 'Tablet', price: '$499', inStock: true },
+  ];
+
+const ProductCard = (products) => {
+  createElements(products);
   return (
-    <div className={`product ${!inStock? 'out-of-stock': ''}`}>
-      <h3>{product.name}</h3>
-      <p><strong>{product.price}</strong></p>
-      <p>{product.inStock}</p>
-      <img src="productImage"></img>
-    </div>
+    <>
+      {container}
+      {title}
+      {price}
+      {availability}
+    </>
   );
 };
 

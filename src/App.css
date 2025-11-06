@@ -37,6 +37,10 @@
   padding: 2em;
 }
 
+.out-of-stock {
+  color: #f61212
+}
+
 .read-the-docs {
   color: #888;
 }

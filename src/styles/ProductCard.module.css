@@ -1,3 +1,27 @@
 /* TODO: Style the product card container */
+.productContainer{
+    width: 18rem;
+    margin: 0 auto;
+    padding: 1rem;
+};
 
+.productTitle{ 
+    font-weight: bold;
+};
+
+.productPrice{
+    font-size: 16 px;
+    font-weight: bold;
+};
 /* TODO: Add special styling for out-of-stock products */
+.diagonalBanner{
+    background-color: red;
+    padding: 50px;
+    transform: skewY(-3deg);
+    overflow: hidden;
+};
+
+.bannerContent{
+    font-size: 16px;
+    font-weight: bold;
+}

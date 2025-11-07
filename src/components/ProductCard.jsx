@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../styles/ProductCard.module.css';
-import createElements from '../App';
-import index from '../index';
+
 
 const products = [
     { id: 1, name: 'Laptop', price: '$999', inStock: true },
@@ -9,16 +8,31 @@ const products = [
     { id: 3, name: 'Tablet', price: '$499', inStock: true },
   ];
 
-const ProductCard = (products) => {
-  createElements(products);
+const ProductCard = ({products}) => {
   return (
-    <>
-      {container}
-      {title}
-      {price}
-      {availability}
-    </>
+    <div>
+      {products.map(product =>
+        <div key={product.id} className={`${styles.productContainer} ${product.inStock ? '' : styles.outOfStock}`}>
+          {!product.inStock && (
+            <div className={styles.diagonalBanner}>
+              <div className={styles.bannerContent}>
+                <h1>Out of Stock</h1>
+              </div>
+            </div>
+          )}
+          <img src="..." className={styles.productImage} alt="..."></img>
+          <div className={styles.cardBody}>
+            <h3 className={styles.productTitle}>{product.name}</h3>
+            <p className={styles.productPrice}>{product.price}</p>
+            <p className={styles.productAvailability}>
+              <button className={product.inStock ? 'btn btn-primary' : 'btn btn-secondary'} disabled={!product.inStock}>Buy Now</button>
+            </p>
+          </div>
+        </div>
+      )} 
+    </div>
   );
-};
+}
+
 
 export default ProductCard;

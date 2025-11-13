@@ -8,7 +8,7 @@ const products = [
     { id: 3, name: 'Tablet', price: '$499', inStock: true },
   ];
 
-const ProductCard = ({products}) => {
+const ProductCard = () => {
   return (
     <div>
       {products.map(product =>
@@ -16,7 +16,7 @@ const ProductCard = ({products}) => {
           {!product.inStock && (
             <div className={styles.diagonalBanner}>
               <div className={styles.bannerContent}>
-                <h1>Out of Stock</h1>
+                <h4>Out of Stock</h4>
               </div>
             </div>
           )}
@@ -33,6 +33,5 @@ const ProductCard = ({products}) => {
     </div>
   );
 }
-
 
 export default ProductCard;

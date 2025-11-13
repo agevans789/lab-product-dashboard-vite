@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProductList from './components/ProductList';
-import styles from './components/App.css';
+import '../App.css';
 
 const App = () => {
 
@@ -12,40 +12,40 @@ const App = () => {
   ];
   
   // TODO: Implement state to manage filtering
-  const filterProducts = () => {
-    const [filterStatus, setFilterStatus] = useState('all');
+  const [filterStatus, setFilterStatus] = useState('all');
     
-    // TODO: Implement logic to filter products based on availability
-    const filteredProducts = products.filter(product => {
-      if (filterStatus === 'inStock') {
-        return product.inStock === true;
-      }
-      if (filterStatus === 'outOfStock') {
-        return product.inStock === false;
-      }
-      return true;
-    })
+  // TODO: Implement logic to filter products based on availability
+  const filteredProducts = products.filter(product => {
+    if (filterStatus === 'inStock') {
+      return product.inStock === true;
+    }
+    if (filterStatus === 'outOfStock') {
+      return product.inStock === false;
+    }
+    return true;
+  })
 
   const showAll = () => setFilterStatus('all');
   const showInStock = () => setFilterStatus('inStock');
   const showOutOfStock = () => setFilterStatus('outOfStock');
   
+  // display all products initially 
+  //add in filtered list, not regular 
   return (
     <div>
       <header id="header">
         <h1>Product Dashboard</h1>
       </header>
       <main>
-        <div className={btn-group}>
-          <button type={button} className={btn btn-primary} onClick={showAll}>Show All</button>
-          <button type={button} className={btn btn-secondary} onClick={showInStock}>Show In Stock</button>
-          <button type={button} className={btn btn-primary} onClick={showOutOfStock}>Show Out of Stock</button>
+        <div className="btn-group" role="group" aria-label="Basic outlined example">
+          <button type="button" className="btn btn-primary" onClick={showAll}>Show All</button>
+          <button type="button" className="btn btn-secondary" onClick={showInStock}>Show In Stock</button>
+          <button type="button" className="btn btn-primary" onClick={showOutOfStock}>Show Out of Stock</button>
         </div>
-        <ProductList products={products}/>
+        <ProductList products={filteredProducts}/>
       </main>
     </div>
   )
-};
 };
 
 export default App;

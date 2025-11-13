@@ -14,8 +14,14 @@
     font-weight: bold;
 };
 /* TODO: Add special styling for out-of-stock products */
+.cardBody{
+    {!product.inStock && (
+        background-color: rgb(170, 162, 162);
+    )};
+};
+
 .diagonalBanner{
-    background-color: red;
+    background-color: rgb(234, 18, 18);
     padding: 50px;
     transform: skewY(-3deg);
     overflow: hidden;
@@ -26,6 +32,4 @@
     font-weight: bold;
 };
 
-.filterButtons{
-    
-}
+

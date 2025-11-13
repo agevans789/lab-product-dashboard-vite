@@ -14,22 +14,14 @@
     font-weight: bold;
 };
 /* TODO: Add special styling for out-of-stock products */
-.cardBody{
-    {!product.inStock && (
-        background-color: rgb(170, 162, 162);
-    )};
+.inStockClass{
+    color:rgb(245, 245, 245)
 };
 
-.diagonalBanner{
-    background-color: rgb(234, 18, 18);
-    padding: 50px;
-    transform: skewY(-3deg);
-    overflow: hidden;
+.outOfStockClass{
+    color:rgb(78, 78, 78)
 };
 
-.bannerContent{
-    font-size: 16px;
-    font-weight: bold;
-};
+
 
 

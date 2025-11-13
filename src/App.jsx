@@ -11,7 +11,7 @@ import './App.css';
 const App = () => {
   const [products, setProducts] = useState(defaultProducts);
 
-  const handleProductRemove = () => {
+  const handleProductRemove = (product) => {
     setProducts((previous) => previous.filter(p => p.id !== product.id))
   };
   // TODO: Define initial product data
